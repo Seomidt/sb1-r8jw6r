@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.action-bar {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn {
+  font-size: 18;
+  padding: 10;
+  margin: 10 0;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.input {
+  font-size: 16;
+  padding: 10;
+  margin: 10 0;
+}
+
+.list-group-item {
+  border-bottom-width: 1;
+  border-bottom-color: #e0e0e0;
+}

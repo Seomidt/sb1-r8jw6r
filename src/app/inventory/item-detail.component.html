@@ -1,0 +1,20 @@
+<ActionBar [title]="item.name" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="routerExtensions.back()"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label [text]="'Name: ' + item.name" class="text-lg font-bold mb-2"></Label>
+    <Label [text]="'Description: ' + item.description" class="mb-2"></Label>
+    <Label [text]="'Status: ' + item.status" [class]="item.status === 'in-car' ? 'text-green-500' : 'text-yellow-500'" class="mb-2"></Label>
+    <Label [text]="'Quantity: ' + item.quantity" class="mb-4"></Label>
+
+    <TextField [(ngModel)]="item.name" hint="Name" class="input mb-2"></TextField>
+    <TextField [(ngModel)]="item.description" hint="Description" class="input mb-2"></TextField>
+    <TextField [(ngModel)]="item.quantity" hint="Quantity" keyboardType="number" class="input mb-4"></TextField>
+
+    <Button text="Toggle Status" (tap)="onToggleStatus()" class="btn btn-primary mb-2"></Button>
+    <Button text="Save Changes" (tap)="onSave()" class="btn btn-success mb-2"></Button>
+    <Button text="Delete Item" (tap)="onDelete()" class="btn btn-danger"></Button>
+  </StackLayout>
+</ScrollView>

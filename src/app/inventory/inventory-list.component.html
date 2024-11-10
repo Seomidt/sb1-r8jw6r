@@ -1,0 +1,22 @@
+<ActionBar title="Inventory List" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="routerExtensions.back()"></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="auto, *">
+  <SearchBar row="0" hint="Search inventory..." [(ngModel)]="searchTerm" (submit)="onSearch()" class="m-2"></SearchBar>
+  
+  <ListView [items]="items" row="1" class="list-group">
+    <ng-template let-item="item">
+      <GridLayout columns="*, auto" class="list-group-item p-4" (tap)="onItemTap(item)">
+        <StackLayout col="0">
+          <Label [text]="item.name" class="text-lg font-bold"></Label>
+          <Label [text]="item.description" class="text-sm text-gray-500"></Label>
+        </StackLayout>
+        <StackLayout col="1" class="text-right">
+          <Label [text]="item.status" [class]="getStatusColor(item.status)"></Label>
+          <Label [text]="'Qty: ' + item.quantity" class="text-sm"></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
